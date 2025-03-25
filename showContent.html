@@ -4,21 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>展示图片和文字</title>
-    <script type="text/javascript">
+    <style>
+        /* 设置容器 */
+        .container {
+            position: relative;
+            display: inline-block;
+        }
+        /* 设置图片的样式 */
+        .image {
+            max-width: 100%;
+            height: auto;
+        }
+        /* 设置文字的样式 */
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;  /* 设置文字颜色 */
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* 增加文字阴影使其更清晰 */
+            text-align: center;
+            max-width: 90%;  /* 防止文字太长而溢出 */
+        }
+    </style>
+</head>
+<body>
+    <h2>展示图片和文字</h2>
+
+    <div class="container">
+        <!-- 动态加载图片 -->
+        <img id="image" class="image" src="" alt="Image">
+        <!-- 动态加载文字 -->
+        <div id="text" class="text"></div>
+    </div>
+
+    <script>
         window.onload = function() {
+            // 获取URL中的查询参数
             var params = new URLSearchParams(window.location.search);
             var imageUrl = params.get("image");
             var textContent = params.get("text");
 
             // 显示图片和文字
             document.getElementById("image").src = imageUrl;
-            document.getElementById("text").innerText = textContent;
+            document.getElementById("text").innerText = decodeURIComponent(textContent);
         }
     </script>
-</head>
-<body>
-    <h2>展示图片和文字</h2>
-    <img id="image" style="max-width: 100%; height: auto;" alt="Image">
-    <p id="text"></p>
 </body>
 </html>
+
