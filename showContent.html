@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Õ¹Ê¾Í¼Æ¬ºÍÎÄ×Ö</title>
+    <title>å±•ç¤ºå›¾ç‰‡å’Œæ–‡å­—</title>
     <script type="text/javascript">
         window.onload = function() {
             var params = new URLSearchParams(window.location.search);
             var imageUrl = params.get("image");
             var textContent = params.get("text");
 
-            // ÏÔÊ¾Í¼Æ¬ºÍÎÄ×Ö
+            // æ˜¾ç¤ºå›¾ç‰‡å’Œæ–‡å­—
             document.getElementById("image").src = imageUrl;
             document.getElementById("text").innerText = textContent;
         }
     </script>
 </head>
 <body>
-    <h2>Õ¹Ê¾Í¼Æ¬ºÍÎÄ×Ö</h2>
+    <h2>å±•ç¤ºå›¾ç‰‡å’Œæ–‡å­—</h2>
     <img id="image" style="max-width: 100%; height: auto;" alt="Image">
     <p id="text"></p>
 </body>
